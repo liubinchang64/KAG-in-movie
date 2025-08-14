@@ -1,0 +1,900 @@
+源实体（电影名称）,目标实体（电影分级）,关系类型
+The Shawshank Redemption,A,有分级
+The Godfather,A,有分级
+The Dark Knight,UA,有分级
+The Godfather: Part II,A,有分级
+12 Angry Men,U,有分级
+The Lord of the Rings: The Return of the King,U,有分级
+Pulp Fiction,A,有分级
+Schindler's List,A,有分级
+Inception,UA,有分级
+Fight Club,A,有分级
+The Lord of the Rings: The Fellowship of the Ring,U,有分级
+Forrest Gump,UA,有分级
+"Il buono, il brutto, il cattivo",A,有分级
+The Lord of the Rings: The Two Towers,UA,有分级
+The Matrix,A,有分级
+Goodfellas,A,有分级
+Star Wars: Episode V - The Empire Strikes Back,UA,有分级
+One Flew Over the Cuckoo's Nest,A,有分级
+Hamilton,PG-13,有分级
+Gisaengchung,A,有分级
+Soorarai Pottru,U,有分级
+Interstellar,UA,有分级
+Cidade de Deus,A,有分级
+Sen to Chihiro no kamikakushi,U,有分级
+Saving Private Ryan,R,有分级
+The Green Mile,A,有分级
+La vita è bella,U,有分级
+Se7en,A,有分级
+The Silence of the Lambs,A,有分级
+Star Wars,UA,有分级
+Shichinin no samurai,U,有分级
+It's a Wonderful Life,PG,有分级
+Joker,A,有分级
+Whiplash,A,有分级
+The Intouchables,UA,有分级
+The Prestige,U,有分级
+The Departed,A,有分级
+The Pianist,R,有分级
+Gladiator,UA,有分级
+American History X,R,有分级
+The Usual Suspects,A,有分级
+Léon,A,有分级
+The Lion King,U,有分级
+Terminator 2: Judgment Day,U,有分级
+Nuovo Cinema Paradiso,U,有分级
+Hotaru no haka,U,有分级
+Back to the Future,U,有分级
+Once Upon a Time in the West,U,有分级
+Psycho,A,有分级
+Casablanca,U,有分级
+Modern Times,G,有分级
+City Lights,G,有分级
+Capharnaüm,A,有分级
+Vikram Vedha,UA,有分级
+Kimi no na wa.,U,有分级
+Dangal,U,有分级
+Spider-Man: Into the Spider-Verse,U,有分级
+Avengers: Endgame,UA,有分级
+Avengers: Infinity War,UA,有分级
+Coco,U,有分级
+Django Unchained,A,有分级
+The Dark Knight Rises,UA,有分级
+3 Idiots,UA,有分级
+Taare Zameen Par,U,有分级
+WALL·E,U,有分级
+The Lives of Others,A,有分级
+Oldeuboi,A,有分级
+Memento,UA,有分级
+Mononoke-hime,U,有分级
+Once Upon a Time in America,A,有分级
+Raiders of the Lost Ark,A,有分级
+The Shining,A,有分级
+Apocalypse Now,R,有分级
+Alien,R,有分级
+Anand,U,有分级
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,A,有分级
+Witness for the Prosecution,U,有分级
+Paths of Glory,A,有分级
+Rear Window,U,有分级
+Sunset Blvd.,Passed,有分级
+The Great Dictator,Passed,有分级
+1917,R,有分级
+Tumbbad,A,有分级
+Andhadhun,UA,有分级
+Drishyam,U,有分级
+Jagten,R,有分级
+Jodaeiye Nader az Simin,PG-13,有分级
+Incendies,R,有分级
+Miracle in cell NO.7,TV-14,有分级
+Inglourious Basterds,A,有分级
+Eternal Sunshine of the Spotless Mind,UA,有分级
+Amélie,U,有分级
+Snatch,UA,有分级
+Requiem for a Dream,A,有分级
+American Beauty,UA,有分级
+Good Will Hunting,U,有分级
+Bacheha-Ye aseman,PG,有分级
+Toy Story,U,有分级
+Braveheart,A,有分级
+Reservoir Dogs,R,有分级
+Full Metal Jacket,UA,有分级
+Idi i smotri,A,有分级
+Aliens,U,有分级
+Amadeus,R,有分级
+Scarface,A,有分级
+Star Wars: Episode VI - Return of the Jedi,U,有分级
+Das Boot,R,有分级
+Taxi Driver,A,有分级
+The Sting,U,有分级
+A Clockwork Orange,A,有分级
+2001: A Space Odyssey,U,有分级
+Per qualche dollaro in più,U,有分级
+Lawrence of Arabia,U,有分级
+The Apartment,U,有分级
+North by Northwest,U,有分级
+Vertigo,A,有分级
+Singin' in the Rain,G,有分级
+Double Indemnity,Passed,有分级
+Citizen Kane,UA,有分级
+M - Eine Stadt sucht einen Mörder,Passed,有分级
+The Kid,Passed,有分级
+Chhichhore,UA,有分级
+Uri: The Surgical Strike,UA,有分级
+K.G.F: Chapter 1,UA,有分级
+Green Book,UA,有分级
+"Three Billboards Outside Ebbing, Missouri",A,有分级
+Talvar,UA,有分级
+Baahubali 2: The Conclusion,UA,有分级
+Klaus,PG,有分级
+Drishyam,UA,有分级
+Queen,UA,有分级
+Bhaag Milkha Bhaag,U,有分级
+Gangs of Wasseypur,A,有分级
+Udaan,UA,有分级
+Paan Singh Tomar,UA,有分级
+El secreto de sus ojos,R,有分级
+Warrior,UA,有分级
+Shutter Island,A,有分级
+Up,U,有分级
+The Wolf of Wall Street,A,有分级
+Chak De! India,U,有分级
+There Will Be Blood,A,有分级
+Pan's Labyrinth,UA,有分级
+Toy Story 3,U,有分级
+V for Vendetta,A,有分级
+Rang De Basanti,UA,有分级
+Black,U,有分级
+Batman Begins,UA,有分级
+"Swades: We, the People",U,有分级
+Der Untergang,R,有分级
+Hauru no ugoku shiro,U,有分级
+A Beautiful Mind,UA,有分级
+Hera Pheri,U,有分级
+"Lock, Stock and Two Smoking Barrels",A,有分级
+L.A. Confidential,A,有分级
+Heat,A,有分级
+Casino,A,有分级
+Andaz Apna Apna,U,有分级
+Unforgiven,A,有分级
+Indiana Jones and the Last Crusade,U,有分级
+Dom za vesanje,R,有分级
+Tonari no Totoro,U,有分级
+Die Hard,A,有分级
+Ran,U,有分级
+Raging Bull,A,有分级
+Stalker,U,有分级
+Höstsonaten,U,有分级
+The Message,PG,有分级
+Sholay,U,有分级
+Monty Python and the Holy Grail,PG,有分级
+The Great Escape,U,有分级
+To Kill a Mockingbird,U,有分级
+Judgment at Nuremberg,A,有分级
+Some Like It Hot,U,有分级
+Smultronstället,U,有分级
+Det sjunde inseglet,A,有分级
+Dial M for Murder,A,有分级
+Tôkyô monogatari,U,有分级
+All About Eve,Passed,有分级
+The Treasure of the Sierra Madre,Passed,有分级
+To Be or Not to Be,Passed,有分级
+The Gold Rush,Passed,有分级
+Sherlock Jr.,Passed,有分级
+Portrait de la jeune fille en feu,R,有分级
+Pink,UA,有分级
+Koe no katachi,16,有分级
+Contratiempo,TV-MA,有分级
+Ah-ga-ssi,A,有分级
+Mommy,R,有分级
+Haider,UA,有分级
+Logan,A,有分级
+Room,R,有分级
+Relatos salvajes,R,有分级
+Soul,U,有分级
+PK,UA,有分级
+OMG: Oh My God!,U,有分级
+The Grand Budapest Hotel,UA,有分级
+Gone Girl,A,有分级
+Ôkami kodomo no Ame to Yuki,U,有分级
+Hacksaw Ridge,A,有分级
+Inside Out,U,有分级
+Barfi!,U,有分级
+12 Years a Slave,A,有分级
+Rush,UA,有分级
+Ford v Ferrari,UA,有分级
+Spotlight,A,有分级
+Song of the Sea,PG,有分级
+Kahaani,UA,有分级
+Zindagi Na Milegi Dobara,U,有分级
+Prisoners,A,有分级
+Mad Max: Fury Road,UA,有分级
+A Wednesday,UA,有分级
+Gran Torino,R,有分级
+Harry Potter and the Deathly Hallows: Part 2,UA,有分级
+Okuribito,PG-13,有分级
+Hachi: A Dog's Tale,G,有分级
+How to Train Your Dragon,U,有分级
+Into the Wild,R,有分级
+No Country for Old Men,R,有分级
+Lage Raho Munna Bhai,U,有分级
+Million Dollar Baby,UA,有分级
+Hotel Rwanda,PG-13,有分级
+Taegukgi hwinalrimyeo,R,有分级
+Before Sunset,R,有分级
+Munna Bhai M.B.B.S.,U,有分级
+Salinui chueok,UA,有分级
+Dil Chahta Hai,Unrated,有分级
+Kill Bill: Vol. 1,R,有分级
+Finding Nemo,U,有分级
+Catch Me If You Can,A,有分级
+Amores perros,A,有分级
+"Monsters, Inc.",U,有分级
+"Shin seiki Evangelion Gekijô-ban: Air/Magokoro wo, kimi ni",UA,有分级
+Lagaan: Once Upon a Time in India,U,有分级
+The Sixth Sense,A,有分级
+La leggenda del pianista sull'oceano,U,有分级
+The Truman Show,U,有分级
+"Crna macka, beli macor",R,有分级
+The Big Lebowski,R,有分级
+Fa yeung nin wah,U,有分级
+Trainspotting,A,有分级
+Fargo,A,有分级
+La haine,UA,有分级
+Dilwale Dulhania Le Jayenge,U,有分级
+Before Sunrise,R,有分级
+Trois couleurs: Rouge,U,有分级
+Chung Hing sam lam,U,有分级
+Jurassic Park,UA,有分级
+In the Name of the Father,UA,有分级
+Ba wang bie ji,R,有分级
+Dà hóng denglong gaogao guà,PG,有分级
+Dead Poets Society,U,有分级
+Stand by Me,U,有分级
+Platoon,A,有分级
+"Paris, Texas",U,有分级
+Kaze no tani no Naushika,U,有分级
+The Thing,A,有分级
+Pink Floyd: The Wall,UA,有分级
+Fitzcarraldo,R,有分级
+Fanny och Alexander,A,有分级
+Blade Runner,UA,有分级
+The Elephant Man,UA,有分级
+Life of Brian,R,有分级
+The Deer Hunter,A,有分级
+Rocky,U,有分级
+Network,UA,有分级
+Barry Lyndon,PG,有分级
+Zerkalo,G,有分级
+Chinatown,UA,有分级
+Paper Moon,U,有分级
+Viskningar och rop,A,有分级
+Solaris,PG,有分级
+Le samouraï,GP,有分级
+Cool Hand Luke,A,有分级
+Andrei Rublev,R,有分级
+What Ever Happened to Baby Jane?,Passed,有分级
+Sanjuro,U,有分级
+Jungfrukällan,A,有分级
+Inherit the Wind,Passed,有分级
+Ben-Hur,U,有分级
+The Bridge on the River Kwai,PG,有分级
+On the Waterfront,A,有分级
+Le salaire de la peur,U,有分级
+Ace in the Hole,Approved,有分级
+The Third Man,Approved,有分级
+Rebecca,Approved,有分级
+Mr. Smith Goes to Washington,Passed,有分级
+Gone with the Wind,U,有分级
+It Happened One Night,Approved,有分级
+La passion de Jeanne d'Arc,Passed,有分级
+The Circus,Passed,有分级
+Sunrise: A Song of Two Humans,Passed,有分级
+The General,Passed,有分级
+Badhaai ho,UA,有分级
+Togo,U,有分级
+Airlift,UA,有分级
+Bajrangi Bhaijaan,UA,有分级
+Baby,UA,有分级
+La La Land,A,有分级
+Lion,U,有分级
+The Martian,UA,有分级
+Zootopia,U,有分级
+Bãhubali: The Beginning,UA,有分级
+Kaguyahime no monogatari,U,有分级
+Wonder,U,有分级
+Gully Boy,UA,有分级
+Special Chabbis,UA,有分级
+Short Term 12,R,有分级
+Serbuan maut 2: Berandal,A,有分级
+The Imitation Game,UA,有分级
+Guardians of the Galaxy,UA,有分级
+Blade Runner 2049,UA,有分级
+Her,A,有分级
+Bohemian Rhapsody,UA,有分级
+The Revenant,A,有分级
+The Perks of Being a Wallflower,UA,有分级
+The King's Speech,U,有分级
+The Help,UA,有分级
+Deadpool,R,有分级
+Darbareye Elly,TV-PG,有分级
+Dev.D,A,有分级
+Yip Man,R,有分级
+My Name Is Khan,UA,有分级
+Slumdog Millionaire,UA,有分级
+Black Swan,A,有分级
+Tropa de Elite,R,有分级
+The Avengers,UA,有分级
+Persepolis,PG-13,有分级
+Dallas Buyers Club,R,有分级
+The Pursuit of Happyness,U,有分级
+Blood Diamond,A,有分级
+The Bourne Ultimatum,UA,有分级
+Bin-jip,U,有分级
+Sin City,A,有分级
+Le scaphandre et le papillon,PG-13,有分级
+Ratatouille,U,有分级
+Casino Royale,PG-13,有分级
+Kill Bill: Vol. 2,A,有分级
+Bom Yeoareum Gaeul Gyeoul Geurigo Bom,R,有分级
+Mar adentro,U,有分级
+Cinderella Man,UA,有分级
+Kal Ho Naa Ho,U,有分级
+Mou gaan dou,UA,有分级
+Pirates of the Caribbean: The Curse of the Black Pearl,UA,有分级
+Big Fish,U,有分级
+The Incredibles,U,有分级
+Dogville,R,有分级
+Donnie Darko,R,有分级
+Magnolia,R,有分级
+Dancer in the Dark,U,有分级
+The Straight Story,U,有分级
+Pâfekuto burû,A,有分级
+Festen,R,有分级
+Central do Brasil,R,有分级
+The Iron Giant,PG,有分级
+Sling Blade,R,有分级
+Secrets & Lies,U,有分级
+Twelve Monkeys,A,有分级
+Kôkaku Kidôtai,UA,有分级
+The Nightmare Before Christmas,U,有分级
+Groundhog Day,U,有分级
+Bound by Honor,R,有分级
+Scent of a Woman,UA,有分级
+Aladdin,U,有分级
+JFK,UA,有分级
+Beauty and the Beast,G,有分级
+Dances with Wolves,U,有分级
+Do the Right Thing,R,有分级
+Rain Man,U,有分级
+Akira,UA,有分级
+The Princess Bride,U,有分级
+Der Himmel über Berlin,U,有分级
+Au revoir les enfants,U,有分级
+Tenkû no shiro Rapyuta,U,有分级
+The Terminator,UA,有分级
+Gandhi,U,有分级
+Kagemusha,U,有分级
+Being There,PG,有分级
+Annie Hall,A,有分级
+Jaws,A,有分级
+Dog Day Afternoon,U,有分级
+Young Frankenstein,A,有分级
+Papillon,R,有分级
+The Exorcist,A,有分级
+Sleuth,PG,有分级
+The Last Picture Show,R,有分级
+Fiddler on the Roof,G,有分级
+Il conformista,UA,有分级
+Butch Cassidy and the Sundance Kid,PG,有分级
+Rosemary's Baby,A,有分级
+Planet of the Apes,U,有分级
+The Graduate,A,有分级
+Who's Afraid of Virginia Woolf?,A,有分级
+The Sound of Music,U,有分级
+Doctor Zhivago,A,有分级
+Per un pugno di dollari,A,有分级
+The Hustler,A,有分级
+La dolce vita,A,有分级
+Rio Bravo,Passed,有分级
+Touch of Evil,PG-13,有分级
+Cat on a Hot Tin Roof,A,有分级
+Sweet Smell of Success,Approved,有分级
+The Killing,Approved,有分级
+A Streetcar Named Desire,A,有分级
+Kind Hearts and Coronets,U,有分级
+Rope,A,有分级
+Brief Encounter,U,有分级
+Laura,Passed,有分级
+The Best Years of Our Lives,Approved,有分级
+The Grapes of Wrath,Passed,有分级
+The Wizard of Oz,U,有分级
+The Thin Man,TV-PG,有分级
+All Quiet on the Western Front,U,有分级
+Knives Out,UA,有分级
+Dil Bechara,UA,有分级
+Manbiki kazoku,A,有分级
+Marriage Story,U,有分级
+Call Me by Your Name,UA,有分级
+"I, Daniel Blake",UA,有分级
+Isle of Dogs,U,有分级
+Hunt for the Wilderpeople,UA,有分级
+Captain Fantastic,R,有分级
+Sing Street,PG-13,有分级
+Thor: Ragnarok,UA,有分级
+Nightcrawler,A,有分级
+Jojo Rabbit,UA,有分级
+Arrival,UA,有分级
+Star Wars: Episode VII - The Force Awakens,U,有分级
+Before Midnight,R,有分级
+X-Men: Days of Future Past,UA,有分级
+The Artist,U,有分级
+Edge of Tomorrow,UA,有分级
+Amour,UA,有分级
+The Irishman,R,有分级
+Un prophète,A,有分级
+Moon,R,有分级
+Låt den rätte komma in,R,有分级
+District 9,A,有分级
+The Wrestler,UA,有分级
+Jab We Met,U,有分级
+Boyhood,A,有分级
+Star Trek,UA,有分级
+In Bruges,R,有分级
+Letters from Iwo Jima,UA,有分级
+The Fall,R,有分级
+Life of Pi,U,有分级
+Fantastic Mr. Fox,PG,有分级
+Les choristes,PG-13,有分级
+Iron Man,UA,有分级
+Shaun of the Dead,UA,有分级
+Gegen die Wand,R,有分级
+Mystic River,A,有分级
+Harry Potter and the Prisoner of Azkaban,U,有分级
+Ying xiong,PG-13,有分级
+Hable con ella,R,有分级
+No Man's Land,R,有分级
+Cowboy Bebop: Tengoku no tobira,U,有分级
+The Bourne Identity,UA,有分级
+Nueve reinas,R,有分级
+Children of Men,A,有分级
+Almost Famous,A,有分级
+Mulholland Dr.,R,有分级
+Toy Story 2,U,有分级
+Boogie Nights,R,有分级
+Mimi wo sumaseba,U,有分级
+Once Were Warriors,A,有分级
+True Romance,R,有分级
+Trois couleurs: Bleu,U,有分级
+Jûbê ninpûchô,A,有分级
+Carlito's Way,A,有分级
+Edward Scissorhands,U,有分级
+My Left Foot: The Story of Christy Brown,U,有分级
+Crimes and Misdemeanors,PG-13,有分级
+The Untouchables,A,有分级
+Hannah and Her Sisters,PG-13,有分级
+Brazil,U,有分级
+This Is Spinal Tap,R,有分级
+A Christmas Story,U,有分级
+The Blues Brothers,U,有分级
+Manhattan,R,有分级
+All That Jazz,A,有分级
+Dawn of the Dead,A,有分级
+All the President's Men,U,有分级
+La montaña sagrada,R,有分级
+Amarcord,R,有分级
+Le charme discret de la bourgeoisie,PG,有分级
+Harold and Maude,PG,有分级
+Patton,U,有分级
+The Wild Bunch,A,有分级
+The Lion in Winter,PG,有分级
+In the Heat of the Night,U,有分级
+Charade,U,有分级
+The Manchurian Candidate,PG-13,有分级
+Spartacus,A,有分级
+L'avventura,U,有分级
+The Ten Commandments,U,有分级
+The Searchers,Passed,有分级
+East of Eden,U,有分级
+High Noon,PG,有分级
+Strangers on a Train,A,有分级
+Harvey,Approved,有分级
+Notorious,U,有分级
+The Big Sleep,Passed,有分级
+The Lost Weekend,Passed,有分级
+His Girl Friday,Passed,有分级
+The Adventures of Robin Hood,PG,有分级
+A Night at the Opera,Passed,有分级
+King Kong,Passed,有分级
+The Gentlemen,A,有分级
+Raazi,UA,有分级
+Sound of Metal,R,有分级
+Forushande,UA,有分级
+Dunkirk,UA,有分级
+Hidden Figures,UA,有分级
+Paddington 2,U,有分级
+Udta Punjab,A,有分级
+Kubo and the Two Strings,PG,有分级
+M.S. Dhoni: The Untold Story,U,有分级
+Manchester by the Sea,UA,有分级
+Under sandet,R,有分级
+Rogue One,UA,有分级
+Captain America: Civil War,UA,有分级
+The Hateful Eight,A,有分级
+Little Women,U,有分级
+Loving Vincent,UA,有分级
+Pride,R,有分级
+Le passé,PG-13,有分级
+The Lunchbox,U,有分级
+Vicky Donor,UA,有分级
+Big Hero 6,U,有分级
+About Time,R,有分级
+English Vinglish,U,有分级
+Kaze tachinu,PG-13,有分级
+Toy Story 4,U,有分级
+La migliore offerta,R,有分级
+Moonrise Kingdom,A,有分级
+How to Train Your Dragon 2,U,有分级
+The Big Short,A,有分级
+The Girl with the Dragon Tattoo,R,有分级
+Captain Phillips,UA,有分级
+Ajeossi,R,有分级
+Straight Outta Compton,R,有分级
+Madeo,R,有分级
+The Hobbit: The Desolation of Smaug,UA,有分级
+Das weiße Band - Eine deutsche Kindergeschichte,UA,有分级
+Män som hatar kvinnor,R,有分级
+The Trial of the Chicago 7,R,有分级
+The Fighter,UA,有分级
+Taken,A,有分级
+The Boy in the Striped Pyjamas,PG-13,有分级
+Once,R,有分级
+The Hobbit: An Unexpected Journey,UA,有分级
+Atonement,R,有分级
+Drive,A,有分级
+American Gangster,A,有分级
+Avatar,UA,有分级
+Mr. Nobody,R,有分级
+Apocalypto,A,有分级
+Little Miss Sunshine,UA,有分级
+Hot Fuzz,UA,有分级
+The Curious Case of Benjamin Button,UA,有分级
+Veer-Zaara,U,有分级
+Adams æbler,R,有分级
+Pride & Prejudice,PG,有分级
+The World's Fastest Indian,U,有分级
+Tôkyô goddofâzâzu,UA,有分级
+Serenity,PG-13,有分级
+Walk the Line,PG-13,有分级
+The Notebook,A,有分级
+Diarios de motocicleta,U,有分级
+Lilja 4-ever,R,有分级
+Les triplettes de Belleville,PG-13,有分级
+The Count of Monte Cristo,PG-13,有分级
+Waking Life,R,有分级
+Remember the Titans,U,有分级
+Wo hu cang long,UA,有分级
+Todo sobre mi madre,R,有分级
+Cast Away,UA,有分级
+The Boondock Saints,R,有分级
+The Insider,UA,有分级
+October Sky,PG,有分级
+Shrek,U,有分级
+Titanic,UA,有分级
+Gattaca,UA,有分级
+The Game,UA,有分级
+Breaking the Waves,R,有分级
+Ed Wood,U,有分级
+What's Eating Gilbert Grape,U,有分级
+Tombstone,R,有分级
+The Sandlot,U,有分级
+The Remains of the Day,U,有分级
+The Fugitive,U,有分级
+A Bronx Tale,R,有分级
+Batman: Mask of the Phantasm,PG,有分级
+Lat sau san taam,R,有分级
+Night on Earth,R,有分级
+La double vie de Véronique,R,有分级
+Boyz n the Hood,A,有分级
+Misery,R,有分级
+Awakenings,U,有分级
+Majo no takkyûbin,U,有分级
+Glory,R,有分级
+Dip huet seung hung,R,有分级
+Back to the Future Part II,U,有分级
+Mississippi Burning,A,有分级
+Predator,A,有分级
+Evil Dead II,A,有分级
+Ferris Bueller's Day Off,U,有分级
+Down by Law,R,有分级
+The Goonies,U,有分级
+The Color Purple,U,有分级
+The Breakfast Club,UA,有分级
+The Killing Fields,UA,有分级
+Ghostbusters,UA,有分级
+The Right Stuff,PG,有分级
+The King of Comedy,U,有分级
+E.T. the Extra-Terrestrial,U,有分级
+Kramer vs. Kramer,A,有分级
+Days of Heaven,PG,有分级
+The Outlaw Josey Wales,A,有分级
+The Man Who Would Be King,PG,有分级
+The Conversation,U,有分级
+La planète sauvage,U,有分级
+The Day of the Jackal,A,有分级
+Badlands,PG,有分级
+Cabaret,A,有分级
+Willy Wonka & the Chocolate Factory,U,有分级
+Midnight Cowboy,A,有分级
+Bonnie and Clyde,A,有分级
+My Fair Lady,U,有分级
+Mary Poppins,U,有分级
+The Longest Day,G,有分级
+The Innocents,A,有分级
+À bout de souffle,U,有分级
+Red River,Passed,有分级
+To Have and Have Not,PG,有分级
+Shadow of a Doubt,PG,有分级
+Stagecoach,Passed,有分级
+Bringing Up Baby,Passed,有分级
+Scarface: The Shame of the Nation,PG,有分级
+Frankenstein,Passed,有分级
+Roma,R,有分级
+Deadpool 2,R,有分级
+Wind River,R,有分级
+Get Out,R,有分级
+Mission: Impossible - Fallout,UA,有分级
+En man som heter Ove,PG-13,有分级
+What We Do in the Shadows,R,有分级
+Omoide no Mânî,U,有分级
+The Theory of Everything,U,有分级
+Kingsman: The Secret Service,A,有分级
+The Fault in Our Stars,UA,有分级
+Me and Earl and the Dying Girl,PG-13,有分级
+Birdman or (The Unexpected Virtue of Ignorance),A,有分级
+La vie d'Adèle,A,有分级
+Kai po che!,U,有分级
+Captain America: The Winter Soldier,UA,有分级
+Rockstar,UA,有分级
+Nebraska,UA,有分级
+Wreck-It Ralph,U,有分级
+Le Petit Prince,PG,有分级
+Midnight in Paris,PG-13,有分级
+The Lego Movie,U,有分级
+Gravity,UA,有分级
+Star Trek Into Darkness,UA,有分级
+The Social Network,UA,有分级
+X: First Class,UA,有分级
+The Hangover,UA,有分级
+Skyfall,UA,有分级
+Silver Linings Playbook,A,有分级
+Argo,A,有分级
+(500) Days of Summer,UA,有分级
+Harry Potter and the Deathly Hallows: Part 1,A,有分级
+Gake no ue no Ponyo,U,有分级
+Frost/Nixon,R,有分级
+Papurika,U,有分级
+Changeling,R,有分级
+Flipped,PG,有分级
+Toki o kakeru shôjo,U,有分级
+Ex Machina,UA,有分级
+Efter brylluppet,R,有分级
+The Last King of Scotland,R,有分级
+Zodiac,UA,有分级
+Lucky Number Slevin,R,有分级
+Joyeux Noël,PG-13,有分级
+Control,R,有分级
+Tangled,U,有分级
+Zwartboek,R,有分级
+Brokeback Mountain,A,有分级
+3:10 to Yuma,A,有分级
+Crash,UA,有分级
+Kung fu,UA,有分级
+The Bourne Supremacy,A,有分级
+The Machinist,R,有分级
+Ray,A,有分级
+Lost in Translation,UA,有分级
+Harry Potter and the Goblet of Fire,UA,有分级
+Man on Fire,UA,有分级
+Coraline,U,有分级
+The Last Samurai,UA,有分级
+The Magdalene Sisters,R,有分级
+Good Bye Lenin!,R,有分级
+In America,PG-13,有分级
+I Am Sam,PG-13,有分级
+Adaptation.,R,有分级
+Black Hawk Down,A,有分级
+Road to Perdition,A,有分级
+Das Experiment,R,有分级
+Billy Elliot,R,有分级
+Hedwig and the Angry Inch,R,有分级
+Ocean's Eleven,UA,有分级
+Vampire Hunter D: Bloodlust,U,有分级
+"O Brother, Where Art Thou?",U,有分级
+Interstate 60: Episodes of the Road,R,有分级
+"South Park: Bigger, Longer & Uncut",A,有分级
+Office Space,R,有分级
+Training Day,A,有分级
+Rushmore,UA,有分级
+Abre los ojos,U,有分级
+Being John Malkovich,R,有分级
+As Good as It Gets,A,有分级
+The Fifth Element,UA,有分级
+Le dîner de cons,PG-13,有分级
+Donnie Brasco,A,有分级
+Shine,U,有分级
+Primal Fear,A,有分级
+Hamlet,PG-13,有分级
+A Little Princess,U,有分级
+Do lok tin si,UA,有分级
+Il postino,U,有分级
+Clerks,R,有分级
+Short Cuts,R,有分级
+Philadelphia,UA,有分级
+The Muppet Christmas Carol,G,有分级
+Malcolm X,U,有分级
+The Last of the Mohicans,UA,有分级
+Kurenai no buta,U,有分级
+Glengarry Glen Ross,R,有分级
+A Few Good Men,U,有分级
+Fried Green Tomatoes,PG-13,有分级
+Barton Fink,U,有分级
+Miller's Crossing,R,有分级
+Who Framed Roger Rabbit,U,有分级
+Withnail & I,R,有分级
+The Last Emperor,U,有分级
+Empire of the Sun,U,有分级
+Der Name der Rose,R,有分级
+Blue Velvet,A,有分级
+The Purple Rose of Cairo,U,有分级
+After Hours,UA,有分级
+Zelig,PG,有分级
+The Verdict,U,有分级
+Star Trek II: The Wrath of Khan,U,有分级
+First Blood,A,有分级
+Ordinary People,U,有分级
+Airplane!,U,有分级
+Rupan sansei: Kariosutoro no shiro,U,有分级
+Halloween,A,有分级
+Le locataire,R,有分级
+Love and Death,PG,有分级
+The Taking of Pelham One Two Three,U,有分级
+Blazing Saddles,A,有分级
+Serpico,A,有分级
+Enter the Dragon,A,有分级
+Deliverance,U,有分级
+The French Connection,A,有分级
+Dirty Harry,A,有分级
+Where Eagles Dare,U,有分级
+The Odd Couple,G,有分级
+Belle de jour,A,有分级
+A Man for All Seasons,U,有分级
+Zulu,U,有分级
+Goldfinger,A,有分级
+The Birds,A,有分级
+Cape Fear,Passed,有分级
+The Magnificent Seven,Approved,有分级
+Invasion of the Body Snatchers,Approved,有分级
+Rebel Without a Cause,PG-13,有分级
+Sabrina,Passed,有分级
+The Quiet Man,Passed,有分级
+The Day the Earth Stood Still,U,有分级
+The African Queen,PG,有分级
+Gilda,Approved,有分级
+Fantasia,G,有分级
+The Invisible Man,TV-PG,有分级
+Dark Waters,PG-13,有分级
+Searching,U/A,有分级
+Once Upon a Time... in Hollywood,A,有分级
+Nelyubov,R,有分级
+The Florida Project,A,有分级
+Just Mercy,A,有分级
+Gifted,PG-13,有分级
+The Peanut Butter Falcon,PG-13,有分级
+Mustang,PG-13,有分级
+Guardians of the Galaxy Vol. 2,UA,有分级
+Baby Driver,UA,有分级
+Only the Brave,UA,有分级
+Bridge of Spies,UA,有分级
+Incredibles 2,UA,有分级
+Moana,U,有分级
+Sicario,A,有分级
+Creed,A,有分级
+Leviafan,R,有分级
+Hell or High Water,R,有分级
+Philomena,PG-13,有分级
+Dawn of the Planet of the Apes,UA,有分级
+Serbuan maut,A,有分级
+End of Watch,A,有分级
+Kari-gurashi no Arietti,U,有分级
+A Star Is Born,UA,有分级
+True Grit,PG-13,有分级
+Hævnen,R,有分级
+Despicable Me,U,有分级
+50/50,R,有分级
+Kick-Ass,UA,有分级
+Moneyball,PG-13,有分级
+La piel que habito,R,有分级
+Zombieland,A,有分级
+Sherlock Holmes,PG-13,有分级
+The Blind Side,UA,有分级
+The Visitor,PG-13,有分级
+Seven Pounds,UA,有分级
+Eastern Promises,R,有分级
+Stardust,U,有分级
+Inside Man,R,有分级
+Gone Baby Gone,R,有分级
+La Vie En Rose,PG-13,有分级
+Huo Yuan Jia,PG-13,有分级
+The Illusionist,U,有分级
+Harry Potter and the Half-Blood Prince,UA,有分级
+300,A,有分级
+Match Point,R,有分级
+Watchmen,A,有分级
+Lord of War,R,有分级
+Saw,UA,有分级
+"Synecdoche, New York",R,有分级
+Mysterious Skin,R,有分级
+Jeux d'enfants,R,有分级
+Un long dimanche de fiançailles,U,有分级
+The Station Agent,R,有分级
+21 Grams,UA,有分级
+Boksuneun naui geot,R,有分级
+Finding Neverland,U,有分级
+25th Hour,R,有分级
+The Butterfly Effect,U,有分级
+28 Days Later...,A,有分级
+The Royal Tenenbaums,A,有分级
+Y tu mamá también,A,有分级
+Harry Potter and the Sorcerer's Stone,U,有分级
+The Others,PG-13,有分级
+Blow,R,有分级
+Enemy at the Gates,A,有分级
+Minority Report,A,有分级
+The Hurricane,R,有分级
+American Psycho,A,有分级
+Lola rennt,UA,有分级
+The Thin Red Line,A,有分级
+Mulan,U,有分级
+Fear and Loathing in Las Vegas,R,有分级
+Funny Games,A,有分级
+Dark City,A,有分级
+Sleepers,UA,有分级
+Lost Highway,A,有分级
+Sense and Sensibility,U,有分级
+Die Hard: With a Vengeance,A,有分级
+Dead Man,R,有分级
+The Bridges of Madison County,A,有分级
+Apollo 13,U,有分级
+Trois couleurs: Blanc,U,有分级
+Falling Down,R,有分级
+Dazed and Confused,U,有分级
+My Cousin Vinny,UA,有分级
+Omohide poro poro,U,有分级
+Delicatessen,R,有分级
+Home Alone,U,有分级
+The Godfather: Part III,A,有分级
+When Harry Met Sally...,UA,有分级
+The Little Mermaid,U,有分级
+The Naked Gun: From the Files of Police Squad!,U,有分级
+"Planes, Trains & Automobiles",U,有分级
+Lethal Weapon,A,有分级
+Blood Simple,A,有分级
+On Golden Pond,UA,有分级
+Mad Max 2,A,有分级
+The Warriors,UA,有分级
+The Muppet Movie,U,有分级
+Escape from Alcatraz,A,有分级
+Watership Down,U,有分级
+Midnight Express,A,有分级
+Close Encounters of the Third Kind,U,有分级
+The Long Goodbye,A,有分级
+Giù la testa,PG,有分级
+Kelly's Heroes,GP,有分级
+The Jungle Book,U,有分级
+Blowup,A,有分级
+A Hard Day's Night,U,有分级
+Breakfast at Tiffany's,A,有分级
+Giant,G,有分级
+From Here to Eternity,Passed,有分级

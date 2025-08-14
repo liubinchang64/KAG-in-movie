@@ -1,0 +1,35 @@
+main_csv: "C:/Users/mrdnh/OneDrive/Desktop/imdb_top_1000.csv"
+main_meta_path: "data/metadata"
+main_review_path: "data/reviews"
+main_meta_index_dir: "cache/main_meta_index"
+main_review_index_dir: "cache/main_review_index"
+
+temp_meta_path: "cache/temp_meta_nodes.json"
+temp_review_path: "cache/temp_review_nodes.json"
+temp_meta_index_dir: "cache/temp_meta_index"
+temp_review_index_dir: "cache/temp_review_index"
+
+llm_api_url: "http://10.14.92.66:8080/v1"
+llm_api_key: "sk-0e8b9f398701eb949af4012639e1ad042f49cacf53a4e00227c8fe962079ae44"
+# 嵌入模型配置
+embedding_model_path: "models/bge-m3"  # 本地嵌入模型路径，若使用远程模型可忽略
+bge_m3_embedding_url: "http://10.14.92.66:8080/v1/embeddings"
+bge_m3_embedding_name: "bge-m3"
+
+# Reranking模型配置
+bge_reranker_url: "http://10.14.92.66:8080/v1/rerank"
+bge_reranker_name: "bge-reranker-v2-m3"
+reranker_score_threshold: 0.6  # 重排序得分阈值，低于此值的结果将被过滤
+nltk_data_path: "C:/Users/mrdnh/AppData/Roaming/nltk_data"
+
+embedding_cache_dir: "cache/embeddings"
+llm_model_name: "deepseek-r1-32b"
+similarity_top_k: 10
+
+eval_data_path: "eval_data.json"            # 你的评测集json
+eval_output_dir: "eval_output"              # 建议新建
+
+# 知识图谱配置
+kg_gexf_path: "知识图谱所用数据/movie_kg.gexf"  # 知识图谱GEXF文件路径
+kg_json_path: "知识图谱所用数据/movie_kg.json"  # 知识图谱JSON文件路径
+kg_vector_store_path: "storage/kg_vector_store.json"  # 知识图谱向量存储路径

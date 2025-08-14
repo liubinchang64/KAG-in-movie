@@ -1,0 +1,322 @@
+下面是**你这套新版代码的完整修复报告**（工程级）。我把问题按“阻断级/高风险/可改进”分级，逐条给出**定位—影响—修复方案—验证方法**。每条都标注到具体文件（已引用你上传的版本）。
+
+---
+
+# 一、结论速览（可直接执行的修复清单）
+
+**必须修：**
+
+1. `NodeWithScore` 内容获取方式不兼容（`get_content()` 可能报错）→ 改为兼容函数 `_nws_text()`（见 §2.1）。
+2. CLI 支持 `remove temp`，但 `TempKnowledgeManager` 没有 `clear()` → 增加 `clear()`（见 §2.2）。
+3. `upload` 仅处理**文件夹**，无法处理**单文件** → `upload_files()` 兼容文件/目录两种输入（见 §2.3）。
+4. LLM 模型名写死为 `"deepseek-r1-32b"`、无超时兜底 → 读取 `config.yaml` 的 `llm_model_name`，并加 `timeout/异常处理`（见 §2.4）。
+
+**建议尽快修：**
+
+5. `SentenceWindowNodeParser`/`MetadataReplacementPostProcessor` 组合未真正产出 `window` 元数据，等于白配（见 §3.1）。
+6. `evaluate_batch.py` 的 Recall 依赖“检索上下文”，但在线问答未存储“**实际检索到的 top‑k 文本**”，Recall 统计可能失真（见 §3.2）。
+
+**体验与一致性优化：**
+
+7. 从持久化载入索引后，显式回填 `Settings.embed_model` 到索引对象（不同版本更稳）（见 §4.1）。
+8. 翻译模型构造失败的容错：在 `__init__` 也加 try/except，降级“原文直出”（见 §4.2）。
+
+---
+
+# 二、阻断级修复
+
+## 2.1 `NodeWithScore` 文本获取不兼容（会直接报错）
+
+**定位**
+
+* `run.py` 在拼接上下文与写入 `eval_data` 时，直接 `node.get_content()`；很多版本的 LlamaIndex 返回 `NodeWithScore`，需要 `nws.get_text()` 或 `nws.node.get_content()`。当前写法易 `AttributeError`。
+
+**影响**
+
+* 一旦检索返回的是 `NodeWithScore`，上下文拼接与采集都会失败，阻断问答与评测。
+
+**修复方案（最小变更）**
+在 `run.py` 增加一个兼容函数，并替换两处使用：
+
+```python
+# --- run.py 顶部或 main() 内部增加 ---
+def _nws_text(nws):
+    if hasattr(nws, "get_text"):  # NodeWithScore 新接口
+        return nws.get_text().strip()
+    n = getattr(nws, "node", None)
+    if n and hasattr(n, "get_content"):
+        return n.get_content().strip()
+    # 兜底
+    return str(nws).strip()
+
+# 拼接上下文
+context = ""
+max_chars = 4000
+for nws in postprocessor.postprocess_nodes(all_nodes):
+    chunk = _nws_text(nws)
+    if len(context) + len(chunk) > max_chars:
+        break
+    context += chunk + "\n\n"
+
+# 采集 eval_data
+eval_data.append({
+    "question": user_input,
+    "answer": answer,
+    "contexts": [_nws_text(nws) for nws in all_nodes]
+})
+```
+
+**验证**
+
+* 人工：提问后能正常打印回答；`eval_data.json` 能看到非空 `contexts`。
+* 回归：多轮问答/包含临库命中时也不报错。
+
+---
+
+## 2.2 缺少 `TempKnowledgeManager.clear()`（命令会崩）
+
+**定位**
+
+* `run.py` 有 `remove temp` 分支调用 `temp_kb.clear()`，但类中未实现。
+
+**影响**
+
+* 执行 `remove temp` 即 `AttributeError`，临库无法清空。
+
+**修复方案（新增方法）**
+在 `temp_kb.py` 内添加：
+
+```python
+def clear(self):
+    import shutil
+    # 清理缓存节点
+    for p in [self.meta_path, self.review_path]:
+        try:
+            if os.path.exists(p):
+                os.remove(p)
+        except Exception:
+            pass
+    # 清理索引目录
+    for d in [self.meta_index_dir, self.review_index_dir]:
+        shutil.rmtree(d, ignore_errors=True)
+    self.meta_index = None
+    self.review_index = None
+```
+
+**验证**
+
+* 执行 `remove temp` 后不报错；随后 `build_temp_index` 会提示索引缺失、可重建。
+
+---
+
+## 2.3 `upload` 只能处理目录，不能处理单文件（功能不完整）
+
+**定位**
+
+* `TempKnowledgeManager.upload_files()` 直接把 `paths[0]` 交给 `auto_classify_and_cache()`；该函数按目录 `os.walk`，传入单文件会导致**无内容入库**。
+
+**影响**
+
+* 常见“传单个 `.txt/.csv/.json` 文件”场景失败，但无显性报错，隐性误用。
+
+**修复方案（向后兼容）**
+在 `temp_kb.py` 的 `upload_files()` 内兼容两种输入：
+
+```python
+def upload_files(self, paths):
+    p = paths[0]
+    if os.path.isdir(p):
+        auto_classify_and_cache(p, self.meta_path, self.review_path)
+    else:
+        # 处理单文件，按文件名关键词归类（最小实现）
+        from llama_index.core.schema import TextNode
+        import hashlib
+        with open(p, "r", encoding="utf-8", errors="ignore") as f:
+            text = f.read()
+        node = TextNode(text=text, id_=hashlib.md5(text.encode()).hexdigest())
+        data = [node.to_dict()]
+        if any(k in os.path.basename(p).lower() for k in ("meta", "metadata")):
+            with open(self.meta_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+        else:
+            with open(self.review_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+```
+
+**验证**
+
+* `upload /path/to/file.txt` 后执行 `build_temp_index` 可检索到该文件内容。
+* `upload /path/to/folder/` 路径仍旧可用。
+
+---
+
+## 2.4 LLM 模型名硬编码 + 无超时/异常兜底（稳定性风险）
+
+**定位**
+
+* `llm_service.py` 中 `payload["model"]` 固定 `"deepseek-r1-32b"`，且 `requests.post` 无 `timeout/try-except`。
+
+**影响**
+
+* 切换模型需要改代码；网络抖动会挂死 CLI 或抛裸异常。
+
+**修复方案（最小变更）**
+
+```python
+# __init__
+self.model_name = config.get("llm_model_name", "deepseek-r1-32b")
+
+# call()
+payload = {
+    "model": self.model_name,
+    "messages": messages,
+    "temperature": 0.7,
+    "max_tokens": 10000,
+    "stream": False
+}
+try:
+    t0 = time.time()
+    response = requests.post(
+        f"{self.api_url}/chat/completions",
+        headers=headers, json=payload, timeout=60
+    )
+    response.raise_for_status()
+except requests.exceptions.RequestException as e:
+    # 兜底返回，保证上层不崩
+    fallback = ("抱歉，LLM 调用失败，请稍后重试。", None) if return_think else "抱歉，LLM 调用失败，请稍后重试。"
+    return fallback
+```
+
+**验证**
+
+* 修改 `config.yaml` 的 `llm_model_name` 后能生效；主动断网可见优雅兜底，不影响主流程。
+
+---
+
+# 三、高风险隐患
+
+## 3.1 `window` 元数据未产出，后处理等于无效
+
+**定位**
+
+* `run.py` 初始化了 `SentenceWindowNodeParser(window_size=3, window_metadata_key="window")` 与 `MetadataReplacementPostProcessor(target_metadata_key="window")`，但**索引构建阶段**未用 parser 对 `Document/TextNode` 产生 `window` 元数据，后处理对多数节点不生效（不报错，但无效果）。
+
+**影响**
+
+* 你预期的“句窗替换”没起到，应答可能不够紧密。
+
+**可选方案**
+
+* 方案 A（临时）：先移除 `postprocessor`，直接用命中的原文块。
+* 方案 B（推荐）：在 **main/临库 build\_index** 前，用 `node_parser` 切分并把 `window` 写入节点元数据再入库（涉及两处构建流程修改，工作量稍大）。
+
+---
+
+## 3.2 批量评估的 Recall 指标可能失真
+
+**定位**
+
+* `evaluate_batch.py` 里 `retrieved_contexts = results.samples[i].contexts if hasattr(...)`，这依赖评估器产出“检索上下文”。当前在线问答并未把“**实际检索的 top‑k 文本**”存入 `eval_data.json`，因此 Recall 统计可能全空或和真实不一致。
+
+**修复建议**
+
+* 在 `run.py` 的检索阶段，把 `all_nodes` 转文本 `_nws_text()` 后，额外写入字段 `retrieved_contexts`：
+
+  ```python
+  retrieved_texts = [_nws_text(nws) for nws in all_nodes]
+  eval_data.append({
+      "question": user_input,
+      "answer": answer,
+      "contexts": retrieved_texts,          # 用它作为 reference_contexts
+      "retrieved_contexts": retrieved_texts # 或单独字段，便于对比
+  })
+  ```
+* 离线评估时，明确用 `retrieved_contexts` 计算 Recall\@k，更贴合线上真实检索。
+
+---
+
+# 四、体验与一致性优化
+
+## 4.1 索引载入后的嵌入模型显式回填
+
+**定位**
+
+* 主/临库 `get_retrievers()` 从存储载入索引后，直接 `.as_retriever()`；多数版本依赖 `Settings.embed_model`，但也有版本需要显式设置 `index._embed_model` 才万无一失。
+
+**建议**
+
+```python
+from llama_index.core import Settings
+# 在 load_index_from_storage 之后：
+self.meta_index._embed_model = Settings.embed_model
+self.review_index._embed_model = Settings.embed_model
+```
+
+## 4.2 翻译模型构造容错
+
+**定位**
+
+* `translator.py` 只在 `translate()` 捕获异常；若 `pipeline("translation", model=...)` 构造失败，模块初始化即崩。
+
+**建议**
+
+* 在 `__init__` 中也 try/except，失败则 `self.translator=None`，`translate()` 直接回传原文。便于无翻译模型或路径错误时降级。
+
+---
+
+# 五、配置改动建议（`config.yaml`）
+
+* 新增：`llm_model_name`（用于 §2.4 动态切换模型）。
+  -（可选）如果你后续改为 HTTP embedding / reranker，也可增加：
+
+  * `bge_m3_embedding_url`、`bge_m3_embedding_name`
+  * `bge_reranker_url`、`bge_reranker_name`
+
+> 由于你当前版本在 `run.py` 里用的是 HuggingFaceEmbedding（本地 ST + 缓存目录），此处仅保留 LLM 动态化即可。
+
+---
+
+# 六、回归测试清单（逐步执行）
+
+1. **主库索引**
+
+   * 删除 `cache/main_*_index/` 后运行，确认自动构建与持久化成功。
+2. **临库上传（文件/目录）**
+
+   * `upload /path/to/file_meta.txt` → `build_temp_index` → 提问一个包含该文件关键信息的问题，应命中临库。
+   * `upload /path/to/folder/` → 同上。
+3. **remove temp**
+
+   * 执行不报错，再次问答不应命中临库。
+4. **LLM 切换/容错**
+
+   * 修改 `llm_model_name` 生效；断网/关服务时返回兜底消息不崩溃。
+5. **评测采集**
+
+   * `eval_data.json` 中 `contexts` 非空，必要时含 `retrieved_contexts`。
+6. **批量评估**
+
+   * 运行 `evaluate_batch.py` 能生成 CSV 与 3 张图，无异常。
+
+---
+
+# 七、后续可选优化（不影响当前可用性）
+
+* **Top‑K 与上下文预算联动**：`max_chars=4000` 时，按“剩余预算”动态截断，避免“多检少用”。
+* **日志与耗时**：为检索/重排/生成阶段统一打印耗时与条目数，便于线上观测（你已打印检索阶段耗时，建议扩到 LLM 阶段）。
+* **tqdm 清理**：`run.py` 已 `from tqdm import tqdm` 但未使用，可移除或用于构建/加载进度。
+
+---
+
+## 附：涉及文件对照
+
+* `run.py`（上下文拼接 & 采集修复；可移除未用的 `tqdm`）
+* `temp_kb.py`（新增 `clear()`；`upload_files()` 兼容单文件/目录；索引构建已正确从 JSON 反序列化 `TextNode`）
+* `llm_service.py`（模型名读取配置；超时/异常兜底）
+* `main_kb.py` / `temp_kb.py`（可加 `_embed_model` 回填以增强兼容）
+* `evaluate_batch.py`（Recall 口径建议）
+* `translator.py`（构造容错建议）
+
+---
+
+如果你需要，我可以**直接给出每个文件的补丁版（可粘贴替换）**，或者帮你把这些改动合成一个 `fix/compat-node-and-cli` 分支说明，配套最小回归脚本与示例 `config.yaml`。

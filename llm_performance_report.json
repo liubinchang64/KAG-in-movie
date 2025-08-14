@@ -1,0 +1,160 @@
+{
+  "timestamp": "2025-08-08 17:06:21",
+  "total_requests": 30,
+  "successful_requests": 30,
+  "failed_requests": 0,
+  "success_rate": 100.0,
+  "results": [
+    {
+      "request_id": 0,
+      "question": "推荐一部动作类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 1,
+      "question": "推荐一部喜剧类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 2,
+      "question": "推荐一部爱情类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 3,
+      "question": "推荐一部科幻类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 4,
+      "question": "推荐一部悬疑类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 5,
+      "question": "推荐一部恐怖类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 6,
+      "question": "推荐一部动画类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 7,
+      "question": "推荐一部冒险类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 8,
+      "question": "推荐一部剧情类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 9,
+      "question": "推荐一部纪录片类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 10,
+      "question": "推荐一部动作类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 11,
+      "question": "推荐一部喜剧类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 12,
+      "question": "推荐一部爱情类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 13,
+      "question": "推荐一部科幻类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 14,
+      "question": "推荐一部悬疑类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 15,
+      "question": "推荐一部恐怖类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 16,
+      "question": "推荐一部动画类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 17,
+      "question": "推荐一部冒险类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 18,
+      "question": "推荐一部剧情类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 19,
+      "question": "推荐一部纪录片类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 20,
+      "question": "推荐一部动作类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 21,
+      "question": "推荐一部喜剧类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 22,
+      "question": "推荐一部爱情类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 23,
+      "question": "推荐一部科幻类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 24,
+      "question": "推荐一部悬疑类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 25,
+      "question": "推荐一部恐怖类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 26,
+      "question": "推荐一部动画类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 27,
+      "question": "推荐一部冒险类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 28,
+      "question": "推荐一部剧情类型的电影，并说明推荐理由",
+      "response_length": 1
+    },
+    {
+      "request_id": 29,
+      "question": "推荐一部纪录片类型的电影，并说明推荐理由",
+      "response_length": 1
+    }
+  ],
+  "errors": []
+}

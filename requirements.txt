@@ -1,0 +1,9 @@
+llama_index>=0.10.0
+transformers
+tqdm
+pandas
+pyyaml
+nltk
+requests
+networkx
+matplotlib
