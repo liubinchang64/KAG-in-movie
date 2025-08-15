@@ -1,0 +1,68 @@
+version: "1.0"
+task: "代码重构"
+project: "电影知识图谱与评分系统"
+language: "Python"
+description: |
+  对现有 Python 项目进行专业级重构，保持功能不变，提高可维护性、模块化和测试覆盖率。
+objectives:
+  - 提高代码可读性与可维护性
+  - 完善模块划分，遵循单一职责原则
+  - 增强类型注解、文档和测试覆盖率（目标≥90%）
+  - 保持现有功能完整，不引入新逻辑
+preconditions:
+  - 所有现有测试必须通过
+  - 在重构过程中，每次提交前必须运行测试
+modules:
+  - name: "api"
+    path: "cli/"
+    description: "CLI 或 API 接口逻辑，未来可迁移至 FastAPI"
+    goals:
+      - 优化入口文件 run.py
+      - 统一参数解析
+      - 移除硬编码配置
+  - name: "rag_engine"
+    path: "core/"
+    description: "RAG 相关逻辑，包括知识图谱加载、临时知识库、LLM 服务"
+    goals:
+      - 将 kg_loader、main_kb、temp_kb 拆分为 `knowledge_base` 模块
+      - 将 llm_service 抽象为 LLM 接口
+      - 将 prompt 模板与检索逻辑解耦
+  - name: "db_layer"
+    path: "core/"
+    description: "数据库操作逻辑（用户评分、实体存储）"
+    goals:
+      - 统一 ORM（SQLAlchemy）
+      - 移除冗余查询
+      - 增加事务安全控制
+  - name: "utils"
+    path: "core/utils.py"
+    description: "通用工具方法"
+    goals:
+      - 移除未使用的函数
+      - 按功能拆分 utils（string_utils、db_utils 等）
+steps:
+  - step: "运行基线测试"
+    command: "pytest --maxfail=1 --disable-warnings -q"
+  - step: "代码扫描与质量分析"
+    command: "pylint core cli && mypy core cli"
+  - step: "逐模块重构"
+    strategy: "每个模块完成后运行测试并提交"
+  - step: "统一代码风格"
+    command: "black . && isort ."
+  - step: "增加类型注解"
+    command: "mypy --strict core cli"
+  - step: "更新文档"
+    include:
+      - "README.md"
+      - "API 文档"
+tests:
+  coverage_target: ">=90%"
+  run_after_each_commit: true
+restrictions:
+  - 不添加新功能
+  - 不改变业务逻辑
+  - 保证性能不下降
+output:
+  - 重构后的代码
+  - 更新的 README 与 API 文档
+  - 测试覆盖率报告

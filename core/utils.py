@@ -484,7 +484,7 @@ def process_general_text_files(file_paths: List[str], meta_cache: str, review_ca
 # 初始化nltk（如果需要）
 # 这个函数可以被其他模块在需要时调用
 
-def init_nltk(nltk_data_path: Optional[str] = None) -> bool:
+def init_nltk(nltk_data_path: Optional[str] = None, download: bool = False) -> bool:
     """
     初始化nltk
     
@@ -499,12 +499,13 @@ def init_nltk(nltk_data_path: Optional[str] = None) -> bool:
         if nltk_data_path and os.path.exists(nltk_data_path):
             nltk.data.path.append(nltk_data_path)
             logger.info(f"已添加nltk数据路径: {nltk_data_path}")
-        # 下载必要的nltk资源
-        try:
-            nltk.download('punkt', quiet=True)
-            logger.debug("已下载nltk punkt资源")
-        except Exception as e:
-            logger.warning(f"下载nltk punkt资源失败: {e}")
+        # 可选：下载必要的nltk资源（默认不下载）
+        if download:
+            try:
+                nltk.download('punkt', quiet=True)
+                logger.debug("已下载nltk punkt资源")
+            except Exception as e:
+                logger.warning(f"下载nltk punkt资源失败: {e}")
         return True
     except Exception as e:
         logger.error(f"nltk初始化失败: {e}")
@@ -536,12 +537,12 @@ def validate_config(config: Dict[str, Any]) -> bool:
         return False
     
     # 检查路径是否有效
-    path_keys = ["main_meta_path", "main_review_path", "temp_meta_path", "temp_review_path"]
+    path_keys = ["main_meta_path", "main_review_path"]
     for key in path_keys:
         path = config[key]
         if path and not os.path.exists(path):
             logger.warning(f"配置路径不存在: {key} = {path}")
-            # 尝试创建目录
+            # 仅当该路径应为目录时创建；这里 main_* 路径为目录，允许创建
             try:
                 os.makedirs(path, exist_ok=True)
                 logger.info(f"已创建目录: {path}")

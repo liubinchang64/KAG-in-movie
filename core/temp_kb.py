@@ -12,7 +12,7 @@ from llama_index.core.vector_stores.simple import SimpleVectorStore
 from llama_index.core.graph_stores.simple import SimpleGraphStore
 from llama_index.core.schema import TextNode
 from core.utils import auto_classify_and_cache, ensure_dirs, load_nodes_from_cache
-from core.models import BGEEmbeddingModel, BGERerankerModel
+from core.llm.models import BGEEmbeddingModel, BGERerankerModel
 
 # 配置日志
 logging.basicConfig(
@@ -58,8 +58,15 @@ class TempKnowledgeManager:
         self.last_updated: Dict[str, float] = {}
         self.document_cache: Dict[str, Dict[str, Any]] = {"meta": {}, "review": {}}
         self.enable_incremental_update = config.get("enable_incremental_update", True)
-        # 确保缓存目录存在
+        # 确保缓存目录存在，并修复历史错误：如果将文件路径误创建为目录，则移除
         ensure_dirs(os.path.dirname(self.meta_nodes_path), os.path.dirname(self.review_nodes_path))
+        try:
+            if os.path.isdir(self.meta_nodes_path):
+                shutil.rmtree(self.meta_nodes_path, ignore_errors=True)
+            if os.path.isdir(self.review_nodes_path):
+                shutil.rmtree(self.review_nodes_path, ignore_errors=True)
+        except Exception as e:
+            logger.warning(f"修复临时缓存路径失败: {e}")
         # 初始化嵌入模型
         self.embed_model = BGEEmbeddingModel(config)
         # 设置全局嵌入模型

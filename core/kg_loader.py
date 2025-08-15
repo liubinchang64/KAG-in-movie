@@ -3,7 +3,7 @@ import os
 import yaml
 import logging
 import networkx as nx
-from core.models import BGEEmbeddingModel
+from core.llm.models import BGEEmbeddingModel
 from llama_index.core.vector_stores.simple import SimpleVectorStore
 from llama_index.core.schema import TextNode
 from llama_index.core.vector_stores.types import VectorStoreQuery

@@ -6,10 +6,11 @@ import logging
 import os
 import re
 from typing import List, Dict, Any, Optional, Tuple
-from core.main_kb import MainKnowledgeManager
-from core.temp_kb import TempKnowledgeManager
-from core.llm_service import LLMService
-from core.kg_loader import KnowledgeGraphLoader
+from core.knowledge_base.main_kb import MainKnowledgeManager
+from core.knowledge_base.temp_kb import TempKnowledgeManager
+from core.llm.service import LLMService
+from core.knowledge_base.kg_loader import KnowledgeGraphLoader
+from core.common import load_config
 from llama_index.core.node_parser import SentenceWindowNodeParser
 from core.evaluator import get_checked_answer
 from core.utils import ensure_dirs, visualize_retrieved_nodes, load_nodes_from_cache, init_nltk, validate_config, format_time
@@ -33,25 +34,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def load_config(config_path: str = "config/config.yaml") -> Dict[str, Any]:
-    """
-    加载配置文件
-    
-    Args:
-        config_path: 配置文件路径
-    
-    Returns:
-        Dict[str, Any]: 配置字典
-    """
-    try:
-        with open(config_path, "r", encoding="utf-8") as f:
-            config = yaml.safe_load(f)
-        logger.info(f"成功加载配置文件: {config_path}")
-        return config
-    except Exception as e:
-        logger.error(f"加载配置文件失败：{e}")
-        print(f"❌ 加载配置文件失败：{e}")
-        return {}
+## 配置加载改为使用 core.common.load_config
 
 
 def init_services(config: Dict[str, Any]) -> Tuple[LLMService, MainKnowledgeManager, TempKnowledgeManager, SentenceWindowNodeParser, KnowledgeGraphLoader]:
@@ -76,7 +59,8 @@ def init_services(config: Dict[str, Any]) -> Tuple[LLMService, MainKnowledgeMana
     os.environ["TOKENIZERS_PARALLELISM"] = "false"
     # 初始化nltk
     nltk_data_path = config.get("nltk_data_path", "")
-    if not init_nltk(nltk_data_path):
+    # 不下载NLTK数据，只附加已有路径
+    if not init_nltk(nltk_data_path, download=False):
         logger.warning("nltk初始化不完全，但继续运行")
 
     # 初始化主知识库

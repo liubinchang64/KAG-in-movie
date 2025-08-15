@@ -11,7 +11,7 @@ from llama_index.core.storage.docstore import SimpleDocumentStore
 from llama_index.core.storage.index_store import SimpleIndexStore
 from llama_index.core.vector_stores.simple import SimpleVectorStore
 from llama_index.core.schema import Document
-from core.models import BGEEmbeddingModel, BGERerankerModel
+from core.llm.models import BGEEmbeddingModel, BGERerankerModel
 from core.utils import load_main_nodes_from_source, ensure_dirs, atomic_write
 
 # 配置日志

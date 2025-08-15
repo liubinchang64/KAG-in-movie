@@ -1,0 +1,40 @@
+# 示例配置，请复制为 config.yaml 并按需修改
+
+main_csv: "data/imdb_top_1000.csv"           # 可选
+main_meta_path: "data/metadata"
+main_review_path: "data/reviews"
+main_meta_index_dir: "cache/main_meta_index"
+main_review_index_dir: "cache/main_review_index"
+
+temp_meta_path: "cache/temp_meta_nodes.json"  # 临时缓存（JSON 文件路径）
+temp_review_path: "cache/temp_review_nodes.json"
+temp_meta_index_dir: "cache/temp_meta_index"
+temp_review_index_dir: "cache/temp_review_index"
+
+# LLM 与模型接口（OpenAI 兼容）
+llm_api_url: "http://localhost:8080/v1"       # 会自动拼接 /chat/completions
+llm_api_key: "sk-your-key"                    # 请勿提交到仓库
+
+# 嵌入模型配置
+bge_m3_embedding_url: "http://localhost:8080/v1/embeddings"
+bge_m3_embedding_name: "bge-m3"
+
+# Reranking 模型配置
+bge_reranker_url: "http://localhost:8080/v1/rerank"
+bge_reranker_name: "bge-reranker-v2-m3"
+reranker_score_threshold: 0.6
+
+# NLTK（可选）
+nltk_data_path: ""  # 留空则不附加，默认不下载资源
+
+embedding_cache_dir: "cache/embeddings"
+llm_model_name: "gpt-4o-mini"                 # 任意兼容模型名
+similarity_top_k: 10
+
+eval_data_path: "eval_data.json"
+eval_output_dir: "eval_output"
+
+# 知识图谱（可选）
+kg_gexf_path: "知识图谱所用数据/movie_kg.gexf"
+kg_json_path: "知识图谱所用数据/movie_kg.json"
+kg_vector_store_path: "storage/kg_vector_store.json"
