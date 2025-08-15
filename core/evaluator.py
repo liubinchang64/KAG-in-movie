@@ -190,7 +190,7 @@ def get_checked_answer(
 import logging
 import re
 from typing import Dict, Any, List, Tuple
-from core.llm_service import LLMService
+from core.llm.service import LLMService
 from core.utils import format_time
 
 # 初始化日志配置
@@ -402,7 +402,7 @@ def get_checked_answer(question: str, answer: str) -> Dict[str, Any]:
     """
     try:
         # 延迟导入避免循环依赖
-        from core.llm_service import LLMService
+        from core.llm.service import LLMService
         from core.utils import load_config
 
         # 加载配置
